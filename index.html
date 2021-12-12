@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hello, World!</title>
+    <style>
+        html {
+            margin: 0px;
+            padding:0px;
+        }
+        header {
+            font-size: 20px;
+            background-color: #ccc;
+        }
+        main{
+            display: grid;
+            grid-template rows: repeat(4, 1fr);
+            grid-gap: 10px;
+            background: linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, 0) 25%);
+        }
+        section{
+            padding-top:100px;
+            font-size: 20px;
+        }
+        .git{
+            padding: 10px 100px;
+            width: fit-content;
+            border:1px solid #CCC ;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        footer{
+            height:20px;
+            font-size: 10px;
+            background-color: #ccc;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Add a black background color to the top navigation */
+        .hamburger {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .hamburger a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .hamburger a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add an active class to highlight the current page */
+        .hamburger a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Hide the link that should open and close the hamburger on small screens */
+        .hamburger .icon {
+            display: none;
+        }
+        /*@media only screen and (min-width: 801px) {*/
+        /*    .hamburger {*/
+        /*        display: none;}*/
+
+        /* When the screen is less than 900 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the hamburger (.icon) */
+        @media screen and (max-width: 900px) {
+            .hamburger a:not(:first-child) {display: none;}
+            .hamburger a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /* The "responsive" class is added to the hamburger with JavaScript when the user clicks on the icon. This class makes the hamburger look good on small screens (display the links vertically instead of horizontally) */
+        @media screen and (max-width: 900px) {
+            .hamburger.responsive {position: relative;}
+            .hamburger.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .hamburger.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    let burger = document.getElementsByClassName('hamburger')[0];
+
+    console.log(burger)
+    console.log(window.innerWidth)
+    let display = window.getComputedStyle(burger).display;
+    let visibility = window.getComputedStyle(burger).visibility;
+    console.log(display)
+    console.log(visibility)
+    /* Toggle between adding and removing the "responsive" class to hamburger when the user clicks on the icon */
+    function burgerToggle() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "hamburger") {
+            x.className += " responsive";
+        } else {
+            x.className = "hamburger";
+        }
+    }
+</script>
+<header>
+<h1>Vinny, Front-end developer</h1>
+
+    <nav class="hamburger " id="myTopnav">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contacts">Contacts</a>
+        <a href="javascript:void(0);" class="icon" onclick="burgerToggle()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+</header>
+<main>
+<section id="about">
+<h2>About me</h2>
+<img width=480px height=270 src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_60/784839/217757_436408.gif">
+<br>
+<p>
+    Hi, I'm Vinny. I've been a front developer for  a while.<br>
+    For me, programming is a way of life: Eat 🍔 ➡️ Sleep 🛏️ ➡️ Code ‍💻 ➡️ Repeat 🔄️ .<br>
+    I'm eager to learn the concepts missing from my knowledge corpus.<br>
+    <b>Skills:</b> HTML, CSS, JS, Angular.<br>
+</p>
+</section>
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="git"><button class="open-window" id="myBtn">Open</button><img width=100 height=100 src="https://cdn2.iconfinder.com/data/icons/social-icons-circular-color/512/github-512.png">
+<a href="https://github.com/vinny59200">Check my github</a><br></div>
+</section>
+<section id="contacts">
+    <h2>Contacts</h2>
+    🏡 <a href="https://www.vvauban.com">website</a> | 🐦 <a href="https://twitter.com/vvauban">twitter</a> | 📺 <a href="https://www.youtube.com/channel/UCYLjkxJuSkJsgBmDoh9dMoA">youtube</a> | 👔 <a href="https://www.linkedin.com/in/vvauban/">linkedin</a>
+</section>
+</main>
+<footer>Made with 💗 in 2021</footer>
+
+<!-- The Modal -->
+<div id="myModal" class="modal window">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
